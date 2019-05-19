@@ -20,3 +20,12 @@ class TestCalcUX(unittest.TestCase):
         expected = 'one hundred four divide by forty-five plus three minus twenty-three equals '\
             'four equals five minus twenty-two divide by three minus twenty-three'
         self.assertEqual(self.calc.convert('104   /   45+3- 23 = 4=5 -  22/3 - 23'), expected)
+
+    def test_invalid_inputs(self):
+        inputted = [
+            '3 34 = 2', '34 - - 3 = 4', ' - 3 = 3', 'f3 - 3 = 4', 'df3 - - 3 ==', '=', '34 5',
+            '3.3', 'f', ' ', '   '
+        ]
+        returned = list(map(self.calc.convert, inputted))
+        expected = ['invalid input']*len(inputted)
+        self.assertEqual(returned, expected)

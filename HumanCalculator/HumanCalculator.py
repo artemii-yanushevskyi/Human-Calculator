@@ -7,6 +7,8 @@ class HumanCalc:
         split = string_normal.split()
         # check string length
         if len(split) % 2 != 1 or len(split) < 0:
+            return 'invalid input'
+            # the following code will not be called
             raise TypeError("Please make sure the expression is correct")
         
         expression = []
@@ -21,6 +23,8 @@ class HumanCalc:
             else:
                 expression.append(num_to_text(split[0]))
         except:
+            return 'invalid input'
+            # the following code will not be called
             raise TypeError("Please make sure the expression is correct")
 
         return ' '.join(expression)
