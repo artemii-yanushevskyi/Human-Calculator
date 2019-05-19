@@ -32,7 +32,7 @@ Run *component* specific tests
 
 * **unit testing**
 * modern and scalable project layout
-* 
+
 
 # Credits
 
